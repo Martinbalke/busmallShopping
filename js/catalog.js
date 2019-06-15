@@ -53,6 +53,7 @@ function updateCounter() {
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
+  contentsEL.textContent = '';
   var ulEL = document.createElement('ul');
   ulEL.textContent = 'The items in your cart are:'
   contentsEL.appendChild(ulEL);
