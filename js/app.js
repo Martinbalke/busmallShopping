@@ -2,19 +2,19 @@
 var formEL = document.getElementById('catalog');
 var optionsEL = document.getElementById('items');
 var quantityEL = document.getElementById('quantity');
-var items = [];
+// var items = [];
 
 // Cart constructor.
 var Cart = function(items) {
   // this.items is an array of CartItem instances.
   this.items = items;
 };
-var myCart = new Cart(items);
+// var cart = new Cart(items);
 
 Cart.prototype.addItem = function(product, quantity) {
   product = optionsEL.value;
   quantity = quantityEL.value;
-  items.push(new CartItem(product, quantity));
+  cart.items.push(new CartItem(product, quantity));
 };
 
 Cart.prototype.saveToLocalStorage = function() {
@@ -27,11 +27,11 @@ Cart.prototype.removeItem = function(item) {
   // Note: You will have to decide what kind of parameter to pass in here!
 };
 
-function addCartItem(e){
-  e.preventDefault();
-  myCart.addItem();
-  myCart.saveToLocalStorage();
-}
+// function addCartItem(e){
+//   e.preventDefault();
+//   cart.addItem();
+//   cart.saveToLocalStorage();
+// }
 
 var CartItem = function(product, quantity) {
   this.product = product;
@@ -68,6 +68,6 @@ function generateCatalog() {
   new Product('assets/water-can.jpg', 'Water Can');
   new Product('assets/wine-glass.jpg', 'Wine Glass');
 }
-formEL.addEventListener('submit', addCartItem)
+// formEL.addEventListener('submit', addCartItem)
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
